@@ -1,23 +1,9 @@
-version: '3'
+docker-compose.ymlversion: '3'
 services:
-    web:
-        build:
-            context: .
-            dockerfile: Dockerfile.dev
-        ports:
-            - "3000:3000"
-        stdin_open: true
-        volumes: 
-            - /app/node_modules
-            - .:/app
-    tests:
-        build:
-            context: .
-            dockerfile: Dockerfile.dev
-        stdin_open: true
-        volumes: 
-            - /app/node_modules
-            - .:/app
-        command:
-            ["npm", "run", "test"]
-
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+      
